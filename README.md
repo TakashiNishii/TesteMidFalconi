@@ -81,11 +81,9 @@ O frontend estará disponível em `http://localhost:3000`
 1. Implementação de autenticação e autorização
 2. Adição de testes unitários e de integração
 3. Persistência de dados com banco de dados
-4. Implementação de cache
-5. Adição de documentação com Swagger
-6. Implementação de validação de dados mais robusta
-7. Adição de logging e monitoramento
-8. Implementação de CI/CD
+4. Implementação de validação de dados mais robusta
+5. Adição de logging e monitoramento
+6. Implementação de CI/CD
 
 ## 📝 Licença
 
