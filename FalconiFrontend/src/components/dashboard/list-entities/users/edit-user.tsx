@@ -1,6 +1,6 @@
 import { PencilSquareIcon } from '@heroicons/react/24/solid'
-import React, { useState } from 'react'
-import { User } from '../../../../lib/utils'
+import React, { useEffect, useState } from 'react'
+import { Profile, User } from '../../../../lib/utils'
 
 interface EditUserProps {
   user: User;
@@ -10,6 +10,7 @@ interface EditUserProps {
 
 const EditUser = ({ user, users, setUsers }: EditUserProps) => {
   const [showModal, setShowModal] = useState(false);
+  const [profiles, setProfiles] = useState<Profile[]>([]);
   const [formData, setFormData] = useState({
     firstName: user.firstName,
     lastName: user.lastName,
@@ -17,7 +18,16 @@ const EditUser = ({ user, users, setUsers }: EditUserProps) => {
     profileId: user.profileId
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  useEffect(() => {
+    const fetchProfiles = async () => {
+      const response = await fetch(`http://localhost:3001/profiles`);
+      const data = await response.json();
+      setProfiles(data);
+    }
+    fetchProfiles();
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -98,15 +108,21 @@ const EditUser = ({ user, users, setUsers }: EditUserProps) => {
                 />
               </div>
               <div>
-                <label className="label">ID do Perfil</label>
-                <input
-                  type="text"
+                <label className="label">Perfil</label>
+                <select
                   name="profileId"
                   value={formData.profileId}
                   onChange={handleChange}
-                  className="input input-bordered w-full"
+                  className="select select-bordered w-full"
                   required
-                />
+                >
+                  <option value="">Selecione um perfil</option>
+                  {profiles.map((profile) => (
+                    <option key={profile.id} value={profile.id}>
+                      {profile.name}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className="modal-action">
                 <button type="submit" className="btn btn-primary">
