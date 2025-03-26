@@ -1,4 +1,10 @@
+import { Metadata } from "next";
 import SignInForm from "../components/sign-in/sign-in-form";
+
+export const metadata: Metadata = {
+  title: 'MidFalconi',
+  description: 'Homepage do MidFalconi',
+}
 
 export default function Home() {
   return (

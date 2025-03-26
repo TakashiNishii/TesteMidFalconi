@@ -5,7 +5,7 @@ import { FilterProvider } from "@/contexts/filter-context"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Dashboard',
+  title: 'MidFalconi - Dashboard',
   description: 'Dashboard do usuário',
 }
 

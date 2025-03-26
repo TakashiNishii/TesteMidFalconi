@@ -72,6 +72,7 @@ const EditUser = ({ user, users, setUsers }: EditUserProps) => {
                   value={formData.firstName}
                   onChange={handleChange}
                   className="input input-bordered w-full"
+                  required
                 />
               </div>
               <div>
@@ -82,6 +83,7 @@ const EditUser = ({ user, users, setUsers }: EditUserProps) => {
                   value={formData.lastName}
                   onChange={handleChange}
                   className="input input-bordered w-full"
+                  required
                 />
               </div>
               <div>
@@ -92,6 +94,7 @@ const EditUser = ({ user, users, setUsers }: EditUserProps) => {
                   value={formData.email}
                   onChange={handleChange}
                   className="input input-bordered w-full"
+                  required
                 />
               </div>
               <div>
@@ -102,6 +105,7 @@ const EditUser = ({ user, users, setUsers }: EditUserProps) => {
                   value={formData.profileId}
                   onChange={handleChange}
                   className="input input-bordered w-full"
+                  required
                 />
               </div>
               <div className="modal-action">

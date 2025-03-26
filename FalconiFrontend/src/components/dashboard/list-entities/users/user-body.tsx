@@ -21,8 +21,6 @@ const UserBody = () => {
       } else {
         setUsers(undefined);
       }
-
-
     }
     const fetchProfiles = async () => {
       const response = await fetch(`http://localhost:3001/profiles`);

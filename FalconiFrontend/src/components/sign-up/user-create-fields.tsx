@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 import { useRouter } from "next/navigation"
-import { CheckCircleIcon } from "@heroicons/react/24/solid"
+import { CheckCircleIcon, ClipboardIcon } from "@heroicons/react/24/solid"
 
 interface Profile {
   name: string
@@ -21,6 +21,7 @@ const UserCreateFields = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
   const [createdUserId, setCreatedUserId] = useState("")
+  const [copySuccess, setCopySuccess] = useState(false)
 
   useEffect(() => {
     // Carregar a lista de perfis quando o componente montar
@@ -76,6 +77,16 @@ const UserCreateFields = () => {
   const handleCloseModal = () => {
     setShowSuccessModal(false)
     router.push("/")
+  }
+
+  const handleCopyId = async () => {
+    try {
+      await navigator.clipboard.writeText(createdUserId)
+      setCopySuccess(true)
+      setTimeout(() => setCopySuccess(false), 2000)
+    } catch (error) {
+      console.error("Erro ao copiar ID:", error)
+    }
   }
 
   return (
@@ -147,9 +158,20 @@ const UserCreateFields = () => {
       <dialog id="success_modal" className={cn("modal", showSuccessModal && "modal-open")}>
         <div className="modal-box flex flex-col items-center justify-center">
           <CheckCircleIcon className="w-32 h-32 text-success" />
-          <p className="py-4 text-lg font-bold">Usuário criado com sucesso!
-          </p>
-          <span className="text-sm ">Utilize seu ID para fazer login: {createdUserId}</span>
+          <p className="py-4 text-lg font-bold">Usuário criado com sucesso!</p>
+          <div className="flex items-center gap-2">
+            <span className="text-sm">ID do usuário: {createdUserId}</span>
+            <button
+              onClick={handleCopyId}
+              className="btn btn-circle btn-sm"
+              title="Copiar ID"
+            >
+              <ClipboardIcon className="w-4 h-4" />
+            </button>
+          </div>
+          {copySuccess && (
+            <span className="text-success text-sm mt-2">ID copiado com sucesso!</span>
+          )}
           <div className="modal-action">
             <button className="btn btn-success w-full" onClick={handleCloseModal}>
               OK

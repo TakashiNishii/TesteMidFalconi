@@ -23,7 +23,7 @@ const ToggleActiveUser = ({ user, users, setUsers }: ToggleActiveUserProps) => {
         throw new Error('Erro ao alterar status do usuário');
       }
       if (Array.isArray(users)) {
-        setUsers(users.map((user) => user.id === user.id ? { ...user, isActive: !user.isActive } : user));
+        setUsers(users.map((userItem) => userItem.id === user.id ? { ...userItem, isActive: !userItem.isActive } : userItem));
       } else if (users) {
         setUsers(undefined);
       }
