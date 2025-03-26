@@ -16,7 +16,7 @@ const DeleteUser = ({ id, name, users, setUsers }: DeleteUserProps) => {
     try {
       const response = await fetch(`http://localhost:3001/users/${id}`, {
         method: 'DELETE'
-      });
+      })
 
       if (response.ok) {
         setShowModal(false);
