@@ -7,16 +7,39 @@ Este projeto é uma aplicação fullstack desenvolvida como parte de um desafio 
 - **Backend**: NestJS com TypeScript
 - **Frontend**: Next.js com TypeScript
 - **Armazenamento**: Dados mockados em memória
+- **Documentação**: Swagger
+- **Estilização**: Tailwind CSS
 
 ## 📋 Funcionalidades Implementadas
 
-- ✅ CRUD completo de usuários
+### Gerenciamento de Usuários
+
+- ✅ Criação de usuários
+- ✅ Edição de usuários
+- ✅ Remoção de usuários
+- ✅ Listagem de usuários
 - ✅ Ativação/desativação de usuários
 - ✅ Busca de usuário por ID
 - ✅ Filtro de usuários por perfil
+
+### Gerenciamento de Perfis
+
+- ✅ Criação de perfis
+- ✅ Listagem de perfis
+- ✅ Remoção de perfis
+- ✅ Busca de perfil por ID
+
+### Relacionamentos
+
 - ✅ Relacionamento entre Usuários e Perfis
+- ✅ Validação de existência de perfil ao criar/editar usuário
 
 ## 🛠️ Como Executar o Projeto
+
+### Pré-requisitos
+
+- Node.js (versão 16 ou superior)
+- npm ou yarn
 
 ### Backend
 
@@ -39,6 +62,7 @@ npm run start:dev
 ```
 
 O backend estará disponível em `http://localhost:3001`
+A documentação da API estará disponível em `http://localhost:3001/api`
 
 ### Frontend
 
@@ -66,24 +90,76 @@ O frontend estará disponível em `http://localhost:3000`
 
 ```
 ├── FalconiBackend/     # API REST com NestJS
+│   ├── src/
+│   │   ├── users/     # Módulo de usuários
+│   │   ├── profiles/  # Módulo de perfis
+│   │   └── interfaces/# Interfaces TypeScript
+│   └── ...
 └── FalconiFrontend/    # Interface com Next.js
+    ├── src/
+    │   ├── app/       # Páginas da aplicação
+    │   ├── components/# Componentes React
+    │   └── lib/       # Utilitários e configurações
+    └── ...
 ```
 
 ## 🔍 Decisões Técnicas
 
-- Utilização de TypeScript para garantir tipagem estática e melhor manutenibilidade
-- NestJS para o backend, oferecendo uma estrutura robusta e escalável
-- Next.js para o frontend, proporcionando uma experiência de desenvolvimento moderna
-- Dados mockados em memória para simplicidade e rapidez no desenvolvimento
+### Backend
+
+- Utilização do NestJS para uma estrutura robusta e escalável
+- Implementação de DTOs para validação de dados
+- Documentação automática com Swagger
+- Tratamento de erros consistente
+- Separação clara de responsabilidades (Controllers, Services, Modules, DTOs)
+
+### Frontend
+
+- Next.js para uma experiência de desenvolvimento moderna
+- Tailwind CSS para estilização ágil e responsiva
+- DaisyUI para componentes acessíveis
+- Componentes reutilizáveis e modulares
+- Context API para gerenciamento de estado
+- Tipagem forte com TypeScript
+- Manipulação de Cookies com Cookies.js
+
+### Arquitetura
+
+- API RESTful seguindo as melhores práticas
+- Dados mockados em memória para simplicidade
+- Relacionamentos entre entidades mantidos mesmo sem persistência
+- Status codes apropriados para cada operação
 
 ## 🔄 Possíveis Melhorias
 
-1. Implementação de autenticação e autorização
-2. Adição de testes unitários e de integração
-3. Persistência de dados com banco de dados
-4. Implementação de validação de dados mais robusta
-5. Adição de logging e monitoramento
-6. Implementação de CI/CD
+1. **Segurança**
+
+   - Implementação de autenticação e autorização
+   - Validação mais robusta de dados
+   - Proteção contra ataques comuns
+
+2. **Performance**
+
+   - Implementação de cache
+   - Otimização de consultas
+   - Paginação de resultados
+
+3. **Persistência**
+
+   - Integração com banco de dados
+   - Migrations e seeds
+   - Backup e recuperação de dados
+
+4. **Qualidade**
+
+   - Testes unitários e de integração
+   - CI/CD pipeline
+   - Logging e monitoramento
+
+5. **UX/UI**
+
+   - Animações e transições
+   - Temas claro/escuro
 
 ## 📝 Licença
 

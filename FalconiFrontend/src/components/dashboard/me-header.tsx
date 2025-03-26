@@ -20,14 +20,19 @@ const MeHeader = ({ userId }: MeHeaderProps) => {
       try {
         const response = await fetch(`http://localhost:3001/users/${userId}`);
         const data = await response.json();
-        setUser(data);
+        if (response.status === 200) {
+          setUser(data);
+        } else {
+          setUser(null);
+          router.push('/');
+        }
       } catch (error) {
         console.error('Erro ao buscar usuário:', error);
       }
     };
 
     fetchUser();
-  }, [userId]);
+  }, [router, userId]);
 
   const handleLogout = () => {
     Cookies.remove('userId');

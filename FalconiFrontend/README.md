@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend - Gerenciamento de Usuários e Perfis
 
-## Getting Started
+Interface web desenvolvida com Next.js para o gerenciamento de usuários e perfis, consumindo a API REST do backend.
 
-First, run the development server:
+## 🚀 Tecnologias
+
+- **Framework**: Next.js 14
+- **Linguagem**: TypeScript
+- **Estilização**: Tailwind CSS
+- **Gerenciamento de Estado**: Context API
+- **Componentes**: DaisyUI
+
+## 📋 Funcionalidades
+
+### Usuários
+
+- Criação de novos usuários
+- Edição de usuários existentes
+- Remoção de usuários
+- Ativação/desativação de usuários
+- Filtro por perfil
+- Busca por ID
+
+### Perfis
+
+- Listagem de perfis
+- Criação de novos perfis
+- Remoção de perfis
+- Visualização de detalhes
+
+## 🛠️ Como Executar
+
+### Pré-requisitos
+
+- Node.js (versão 16 ou superior)
+- npm ou yarn
+- Backend rodando em `http://localhost:3001`
+
+### Instalação
+
+1. Instale as dependências:
+
+```bash
+npm install
+```
+
+2. Execute o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação estará disponível em `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Estrutura do Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                    # Páginas da aplicação
+│   ├── page.tsx           # Página inicial
+│   ├── sign-in/           # Página de login
+│   └── sign-up/           # Página de cadastro
+├── components/            # Componentes React
+│   ├── common/           # Componentes compartilhados
+│   ├── sign-in/          # Componentes da página de login
+│   └── sign-up/          # Componentes da página de cadastro
+├── contexts/             # Contextos React
+│   └── filter-context.tsx            # Contexto de filtro
+└── lib/                  # Utilitários e configurações
+    └── utils/           # Funções utilitárias
+```
 
-## Learn More
+## 🔍 Decisões Técnicas
 
-To learn more about Next.js, take a look at the following resources:
+### Arquitetura
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Utilização do App Router do Next.js para roteamento
+- Componentes modulares e reutilizáveis
+- Separação clara de responsabilidades
+- Tipagem forte com TypeScript
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### UI/UX
 
-## Deploy on Vercel
+- Design responsivo com Tailwind CSS
+- Componentes acessíveis com DaisyUI
+- Feedback visual para ações do usuário
+- Validação de formulários em tempo real
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Estado
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Context API para gerenciamento de estado dos filtros
+- Manipulação de Cookies com Next.js
+
+### Performance
+
+- Otimização de imagens com Next.js
+- Code splitting automático
+
+## 🔄 Possíveis Melhorias
+
+1. **Performance**
+
+   - Implementação de cache
+   - Divisão de componentes SSR e CSR
+
+2. **UX/UI**
+
+   - Animações de transição
+   - Feedback de loading
+   - Mensagens de erro mais detalhadas
+   - Responsividade
+
+3. **Acessibilidade**
+
+   - Contraste adequado
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT.
