@@ -1,6 +1,6 @@
 import SignInFields from "./sign-in-fields";
 import Link from "next/link";
-import HomeTemplate from "../common/homeTemplate";
+import HomeTemplate from "../common/home-template";
 
 export default function SignInForm() {
   return (

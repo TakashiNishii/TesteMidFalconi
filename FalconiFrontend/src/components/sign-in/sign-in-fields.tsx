@@ -33,7 +33,7 @@ const SignInFields = () => {
   }
 
   return (
-    <form className="space-y-6" onSubmit={handleSubmit}>
+    <form className="space-y-6 w-full" onSubmit={handleSubmit}>
       <div className="min-h-[20px] -mb-1"> {/* Container com altura mínima fixa */}
         {messageError && (
           <label htmlFor="id" className="text-error text-xs block">{messageError}</label>

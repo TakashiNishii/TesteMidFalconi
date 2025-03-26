@@ -1,5 +1,5 @@
 import React from 'react'
-import HomeTemplate from '../common/homeTemplate'
+import HomeTemplate from '../common/home-template'
 import Link from 'next/link'
 import SignUpFields from './sign-up-fields'
 
