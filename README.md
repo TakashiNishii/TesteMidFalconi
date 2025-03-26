@@ -2,6 +2,8 @@
 
 Este projeto é uma aplicação fullstack desenvolvida como parte de um desafio técnico, implementando um sistema de gerenciamento de usuários e perfis.
 
+![banner](./banner.png)
+
 ## 🚀 Tecnologias Utilizadas
 
 - **Backend**: NestJS com TypeScript
