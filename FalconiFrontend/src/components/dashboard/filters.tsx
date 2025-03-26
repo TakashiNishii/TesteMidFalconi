@@ -3,7 +3,7 @@
 import { useFilter } from "@/contexts/filter-context"
 import TypesTab from "../common/types-tab"
 import { useEffect, useState } from "react"
-import { Profile } from "../../lib/utils"
+import { Profile, TypesEntities } from "../../lib/utils"
 
 const Filters = () => {
   const { typeEntity, searchId, profileId, setTypeEntity, setSearchId, setProfileId } = useFilter()
@@ -35,7 +35,7 @@ const Filters = () => {
           />
         </div>
 
-        <div className="form-control">
+        {typeEntity === TypesEntities.User && <div className="form-control">
           <select className="select select-bordered w-full max-w-xs" defaultValue={profileId} onChange={(e) => setProfileId(e.target.value)}>
             <option disabled value="">Selecione um perfil</option>
             <option value="">Todos</option>
@@ -45,7 +45,7 @@ const Filters = () => {
               </option>
             ))}
           </select>
-        </div>
+        </div>}
       </div>
     </div>
   )

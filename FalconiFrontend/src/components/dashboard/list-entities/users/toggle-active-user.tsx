@@ -4,8 +4,8 @@ import { cn, User } from '../../../../lib/utils';
 
 interface ToggleActiveUserProps {
   user: User;
-  users: User[] | User | undefined;
-  setUsers: React.Dispatch<React.SetStateAction<User[] | User | undefined>>;
+  users: User[] | undefined;
+  setUsers: React.Dispatch<React.SetStateAction<User[] | undefined>>;
 }
 
 const ToggleActiveUser = ({ user, users, setUsers }: ToggleActiveUserProps) => {

@@ -34,6 +34,5 @@ export class ProfilesService {
       throw new NotFoundException(`Perfil com ID ${id} não encontrado`);
     }
     this.profiles.splice(index, 1);
-    
   }
 }

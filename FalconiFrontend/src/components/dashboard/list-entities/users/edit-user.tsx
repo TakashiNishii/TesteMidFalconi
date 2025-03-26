@@ -4,8 +4,8 @@ import { User } from '../../../../lib/utils'
 
 interface EditUserProps {
   user: User;
-  users: User[] | User | undefined;
-  setUsers: React.Dispatch<React.SetStateAction<User[] | User | undefined>>;
+  users: User[] | undefined;
+  setUsers: React.Dispatch<React.SetStateAction<User[] | undefined>>;
 }
 
 const EditUser = ({ user, users, setUsers }: EditUserProps) => {

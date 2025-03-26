@@ -5,6 +5,7 @@ import { TypesEntities } from "../../../lib/utils"
 import UserHeader from "./users/user-header"
 import ProfileHeader from "./profiles/profile-header"
 import UserBody from "./users/user-body"
+import ProfileBody from "./profiles/profile-body"
 
 const ListTable = () => {
   const { typeEntity } = useFilter()
@@ -24,10 +25,10 @@ const ListTable = () => {
           {
             typeEntity === TypesEntities.User && <UserBody />
           }
-          {/* 
+
           {
             typeEntity === TypesEntities.Profile && <ProfileBody />
-          } */}
+          }
         </tbody>
       </table>
     </div>

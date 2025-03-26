@@ -5,8 +5,8 @@ import { User } from '../../../../lib/utils';
 interface DeleteUserProps {
   id: string;
   name: string;
-  users: User | User[] | undefined;
-  setUsers: Dispatch<SetStateAction<User | User[] | undefined>>
+  users: User[] | undefined;
+  setUsers: Dispatch<SetStateAction<User[] | undefined>>
 }
 
 const DeleteUser = ({ id, name, users, setUsers }: DeleteUserProps) => {
